@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package pb;
+
+message separation{
+    string ip = 1;
+    int32 port = 2;
+    string flag = 3;
+}
+
+message networkOperator {
+    networkOperate operate = 1;
+    int32 probability = 2;
+}
+
+enum networkOperate {
+    Delay = 0;
+    Loss = 1;
+}
+
+enum ErrorType {
+    UnknownError = 0;
+    InProcessError = 1;
+    NoError = 2;
+    NotInProcessError = 3;
+    UnMatchIdError = 4;
+}

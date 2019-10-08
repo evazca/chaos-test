@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package pb;
+
+import "common.proto";
+
+service Master {
+    rpc prepare (prepareReq) returns (prepareResp) {}
+    rpc revoke (revokeReq) returns (revokeResp) {}
+    rpc randomInject (randomInjectReq) returns (randomInjectResp) {}
+    rpc networkOperate(networkOperateReq) returns (networkOperateResp) {}
+    rpc revokeNetworkOperate (revokeNetworkOperateReq) returns (revokeNetworkOperateResp) {}
+}
+
+message prepareReq {
+
+}
+
+message prepareResp {
+    bool result = 1;
+}
+
+message revokeReq {
+
+}
+
+message revokeResp {
+    bool result = 1;
+}
+
+message randomInjectReq {
+
+}
+
+message randomInjectResp {
+    bool result = 1;
+}
+
+message networkOperateReq {
+    repeated separation separation = 1;
+    networkOperator operator = 2;
+}
+
+message networkOperateResp {
+    bool result = 1;
+    int32 mark = 2;
+}
+
+message revokeNetworkOperateReq {
+    int32 mark = 1;
+}
+
+
+message revokeNetworkOperateResp {
+    bool result = 1;
+}
+

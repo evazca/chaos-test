@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package pb;
+
+import "common.proto";
+
+service Agent {
+    rpc prepare (prepareReq) returns (prepareResp) {}
+    rpc revoke (revokeReq) returns (revokeResp) {}
+    rpc prepareNetworkInject (prepareNetworkInjectReq) returns (prepareNetworkInjectResp) {}
+    rpc revokeNetworkInject (revokeNetworkInjectReq) returns (revokeNetworkInjectResp) {}
+    rpc networkOperate(networkOperateReq) returns (networkOperateResp) {}
+    rpc revokeNetworkOperate (revokeNetworkOperateReq) returns (revokeNetworkOperateResp) {}
+}
+
+
+message prepareReq {
+    string id = 1;
+}
+
+message prepareResp {
+    commonResp commonResp = 1;
+}
+
+message revokeReq {
+    string id = 1;
+    bool force = 2;
+}
+
+message revokeResp {
+    commonResp commonResp = 1;
+}
+
+message prepareNetworkInjectReq {
+    string id = 1;
+}
+
+message prepareNetworkInjectResp {
+    commonResp commonResp = 1;
+}
+
+message revokeNetworkInjectReq {
+    string id = 1;
+
+}
+
+message revokeNetworkInjectResp {
+    commonResp commonResp = 1;
+}
+
+message networkOperateReq {
+    string id = 1;
+    repeated separation separation = 2;
+    networkOperator operator = 3;
+}
+
+message networkOperateResp {
+    commonResp commonResp = 1;
+    int32 mark = 2;
+}
+
+message revokeNetworkOperateReq {
+    string id = 1;
+    int32 mark = 2;
+}
+
+
+message revokeNetworkOperateResp {
+    commonResp commonResp = 1;
+}
+
+message commonResp {
+    bool result = 1;
+    ErrorType errorType = 2;
+    string id = 3;
+}
