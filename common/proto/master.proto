@@ -4,7 +4,7 @@ package pb;
 
 import "common.proto";
 
-option java_package = "github.com.evazca";
+option java_package = "com.github.evazca.chaos.pb";
 
 service Master {
     rpc prepare (prepareMasterReq) returns (prepareMasterResp) {}

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package pb;
 
-option java_package = "github.com.evazca";
+option java_package = "com.github.evazca.chaos.pb";
 
 message separation{
     string ip = 1;
