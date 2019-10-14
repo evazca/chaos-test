@@ -3,7 +3,8 @@ package network
 import (
 	"errors"
 	"fmt"
-	"github.com/evazca/chaos-agent/common/pb"
+	"github.com/evazca/chaos-test/common/log"
+	"github.com/evazca/chaos-test/common/pb"
 	"os/exec"
 	"strconv"
 	"sync"
@@ -20,24 +21,36 @@ type NetMonkey struct {
 
 func (n *NetMonkey) Prepare() (error) {
 	//TODO it is not safe to del without check if there are some config for reason
-	err := exec.Command("sudo tc qdisc del dev eth0 root").Run()
+	cmd := "sudo tc qdisc del dev eth0 root"
+	log.CommonLogger.Debug(cmd)
+	err := exec.Command(cmd).Run()
 	if err != nil {
+		log.CommonLogger.Error("exec cmd "+cmd, err)
 		return  err
 	}
-	err = exec.Command("sudo tc qdisc add dev eth0 handle 1: root htb").Run()
+	cmd = "sudo tc qdisc add dev eth0 handle 1: root htb"
+	log.CommonLogger.Debug(cmd)
+	err = exec.Command(cmd).Run()
 	if err != nil {
+		log.CommonLogger.Error("exec cmd "+cmd, err)
 		return err
 	}
 	return nil
 }
 
 func (n *NetMonkey) Revoke() (error){
-	err := exec.Command("sudo tc qdisc del dev eth0 root").Run()
+	cmd := "sudo tc qdisc del dev eth0 root"
+	log.CommonLogger.Debug(cmd)
+	err := exec.Command(cmd).Run()
 	if err != nil {
+		log.CommonLogger.Error("exec cmd "+cmd, err)
 		return err
 	}
-	err = exec.Command("sudo iptables -F").Run()
+	cmd = "sudo iptables -F"
+	log.CommonLogger.Debug(cmd)
+	err = exec.Command(cmd).Run()
 	if err != nil {
+		log.CommonLogger.Error("exec cmd "+cmd, err)
 		return err
 	}
 	n.mark = 15
@@ -48,12 +61,18 @@ func (n *NetMonkey) Revoke() (error){
 
 func (n *NetMonkey) OperateNodes(separations  []*pb.Separation, operator *pb.NetworkOperator) (int32,error) {
 	mark := atomic.AddInt32(&n.mark, 1)
-	err := exec.Command(fmt.Sprintf("sudo tc class add dev eth0 parent 1: classid 1:%v htb rate 1000Mbps", mark)).Run()
+	cmd := fmt.Sprintf("sudo tc class add dev eth0 parent 1: classid 1:%v htb rate 1000Mbps", mark)
+	log.CommonLogger.Debug(cmd)
+	err := exec.Command(cmd).Run()
 	if err != nil {
+		log.CommonLogger.Error("exec cmd "+cmd, err)
 		return mark, err
 	}
-	err = exec.Command(fmt.Sprintf("tc filter add dev eth0 parent 1:0 prio 1 protocol ip handle %v fw flowid 1:%v", mark, mark)).Run()
+	cmd = fmt.Sprintf("tc filter add dev eth0 parent 1:0 prio 1 protocol ip handle %v fw flowid 1:%v", mark, mark)
+	log.CommonLogger.Debug(cmd)
+	err = exec.Command(cmd).Run()
 	if err != nil {
+		log.CommonLogger.Error("exec cmd "+cmd, err)
 		return mark, err
 	}
 	op := ""
@@ -65,8 +84,11 @@ func (n *NetMonkey) OperateNodes(separations  []*pb.Separation, operator *pb.Net
 	default:
 		return mark, errors.New("unknown operator")
 	}
-	err = exec.Command(fmt.Sprintf("tc qdisc add dev eth0 parent 1:%v handle %v netem %v %v%%", mark, mark, op, operator.Probability)).Run()
+	cmd = fmt.Sprintf("tc qdisc add dev eth0 parent 1:%v handle %v netem %v %v%%", mark, mark, op, operator.Probability)
+	log.CommonLogger.Debug(cmd)
+	err = exec.Command(cmd).Run()
 	if err != nil {
+		log.CommonLogger.Error("exec cmd "+cmd, err)
 		return mark, err
 	}
 	return mark, n.runIptableCmd(separations, operator, mark, false)
@@ -96,8 +118,11 @@ func (n *NetMonkey) runIptableCmd(separations []*pb.Separation, operator *pb.Net
 			protocol = "-p tcp"
 			tcpFlag = "--tcp-flags " + tcpFlag
 		}
-		err := exec.Command(fmt.Sprintf("iptables %v OUTPUT -t mangle %v %v %v %v -j MARK --set-mark %v", op, protocol, tcpFlag, dst, dstPort, mark)).Run()
+		cmd := fmt.Sprintf("iptables %v OUTPUT -t mangle %v %v %v %v -j MARK --set-mark %v", op, protocol, tcpFlag, dst, dstPort, mark)
+		log.CommonLogger.Debug(cmd)
+		err := exec.Command(cmd).Run()
 		if err != nil {
+			log.CommonLogger.Error("exec cmd "+cmd, err)
 			return err
 		}
 	}
@@ -115,6 +140,7 @@ func (n *NetMonkey) RevokeNodes(mark int32) error {
 	}
 	separations, ok := separationsI.([]*pb.Separation)
 	if !ok {
+		log.CommonLogger.Error(separationsI)
 		return errors.New("unknown interface cast error")
 	}
 	operatorI,ok := n.operators.Load(mark)
@@ -124,6 +150,7 @@ func (n *NetMonkey) RevokeNodes(mark int32) error {
 	}
 	operator, ok := operatorI.(*pb.NetworkOperator)
 	if !ok {
+		log.CommonLogger.Error(operatorI)
 		return errors.New("unknown interface cast error")
 	}
 

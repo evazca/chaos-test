@@ -24,144 +24,230 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type PrepareReq struct {
+type PrepareMasterReq struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *PrepareReq) Reset()         { *m = PrepareReq{} }
-func (m *PrepareReq) String() string { return proto.CompactTextString(m) }
-func (*PrepareReq) ProtoMessage()    {}
-func (*PrepareReq) Descriptor() ([]byte, []int) {
+func (m *PrepareMasterReq) Reset()         { *m = PrepareMasterReq{} }
+func (m *PrepareMasterReq) String() string { return proto.CompactTextString(m) }
+func (*PrepareMasterReq) ProtoMessage()    {}
+func (*PrepareMasterReq) Descriptor() ([]byte, []int) {
 	return fileDescriptor_f9c348dec43a6705, []int{0}
 }
 
-func (m *PrepareReq) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_PrepareReq.Unmarshal(m, b)
+func (m *PrepareMasterReq) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrepareMasterReq.Unmarshal(m, b)
 }
-func (m *PrepareReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_PrepareReq.Marshal(b, m, deterministic)
+func (m *PrepareMasterReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrepareMasterReq.Marshal(b, m, deterministic)
 }
-func (m *PrepareReq) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PrepareReq.Merge(m, src)
+func (m *PrepareMasterReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrepareMasterReq.Merge(m, src)
 }
-func (m *PrepareReq) XXX_Size() int {
-	return xxx_messageInfo_PrepareReq.Size(m)
+func (m *PrepareMasterReq) XXX_Size() int {
+	return xxx_messageInfo_PrepareMasterReq.Size(m)
 }
-func (m *PrepareReq) XXX_DiscardUnknown() {
-	xxx_messageInfo_PrepareReq.DiscardUnknown(m)
+func (m *PrepareMasterReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrepareMasterReq.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_PrepareReq proto.InternalMessageInfo
+var xxx_messageInfo_PrepareMasterReq proto.InternalMessageInfo
 
-type PrepareResp struct {
+func (m *PrepareMasterReq) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type PrepareMasterResp struct {
 	Result               bool     `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *PrepareResp) Reset()         { *m = PrepareResp{} }
-func (m *PrepareResp) String() string { return proto.CompactTextString(m) }
-func (*PrepareResp) ProtoMessage()    {}
-func (*PrepareResp) Descriptor() ([]byte, []int) {
+func (m *PrepareMasterResp) Reset()         { *m = PrepareMasterResp{} }
+func (m *PrepareMasterResp) String() string { return proto.CompactTextString(m) }
+func (*PrepareMasterResp) ProtoMessage()    {}
+func (*PrepareMasterResp) Descriptor() ([]byte, []int) {
 	return fileDescriptor_f9c348dec43a6705, []int{1}
 }
 
-func (m *PrepareResp) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_PrepareResp.Unmarshal(m, b)
+func (m *PrepareMasterResp) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_PrepareMasterResp.Unmarshal(m, b)
 }
-func (m *PrepareResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_PrepareResp.Marshal(b, m, deterministic)
+func (m *PrepareMasterResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_PrepareMasterResp.Marshal(b, m, deterministic)
 }
-func (m *PrepareResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PrepareResp.Merge(m, src)
+func (m *PrepareMasterResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_PrepareMasterResp.Merge(m, src)
 }
-func (m *PrepareResp) XXX_Size() int {
-	return xxx_messageInfo_PrepareResp.Size(m)
+func (m *PrepareMasterResp) XXX_Size() int {
+	return xxx_messageInfo_PrepareMasterResp.Size(m)
 }
-func (m *PrepareResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_PrepareResp.DiscardUnknown(m)
+func (m *PrepareMasterResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_PrepareMasterResp.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_PrepareResp proto.InternalMessageInfo
+var xxx_messageInfo_PrepareMasterResp proto.InternalMessageInfo
 
-func (m *PrepareResp) GetResult() bool {
+func (m *PrepareMasterResp) GetResult() bool {
 	if m != nil {
 		return m.Result
 	}
 	return false
 }
 
-type RevokeReq struct {
+type RevokeMasterReq struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *RevokeReq) Reset()         { *m = RevokeReq{} }
-func (m *RevokeReq) String() string { return proto.CompactTextString(m) }
-func (*RevokeReq) ProtoMessage()    {}
-func (*RevokeReq) Descriptor() ([]byte, []int) {
+func (m *RevokeMasterReq) Reset()         { *m = RevokeMasterReq{} }
+func (m *RevokeMasterReq) String() string { return proto.CompactTextString(m) }
+func (*RevokeMasterReq) ProtoMessage()    {}
+func (*RevokeMasterReq) Descriptor() ([]byte, []int) {
 	return fileDescriptor_f9c348dec43a6705, []int{2}
 }
 
-func (m *RevokeReq) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RevokeReq.Unmarshal(m, b)
+func (m *RevokeMasterReq) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RevokeMasterReq.Unmarshal(m, b)
 }
-func (m *RevokeReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RevokeReq.Marshal(b, m, deterministic)
+func (m *RevokeMasterReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RevokeMasterReq.Marshal(b, m, deterministic)
 }
-func (m *RevokeReq) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RevokeReq.Merge(m, src)
+func (m *RevokeMasterReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RevokeMasterReq.Merge(m, src)
 }
-func (m *RevokeReq) XXX_Size() int {
-	return xxx_messageInfo_RevokeReq.Size(m)
+func (m *RevokeMasterReq) XXX_Size() int {
+	return xxx_messageInfo_RevokeMasterReq.Size(m)
 }
-func (m *RevokeReq) XXX_DiscardUnknown() {
-	xxx_messageInfo_RevokeReq.DiscardUnknown(m)
+func (m *RevokeMasterReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_RevokeMasterReq.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_RevokeReq proto.InternalMessageInfo
+var xxx_messageInfo_RevokeMasterReq proto.InternalMessageInfo
 
-type RevokeResp struct {
+type RevokeMasterResp struct {
 	Result               bool     `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *RevokeResp) Reset()         { *m = RevokeResp{} }
-func (m *RevokeResp) String() string { return proto.CompactTextString(m) }
-func (*RevokeResp) ProtoMessage()    {}
-func (*RevokeResp) Descriptor() ([]byte, []int) {
+func (m *RevokeMasterResp) Reset()         { *m = RevokeMasterResp{} }
+func (m *RevokeMasterResp) String() string { return proto.CompactTextString(m) }
+func (*RevokeMasterResp) ProtoMessage()    {}
+func (*RevokeMasterResp) Descriptor() ([]byte, []int) {
 	return fileDescriptor_f9c348dec43a6705, []int{3}
 }
 
-func (m *RevokeResp) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RevokeResp.Unmarshal(m, b)
+func (m *RevokeMasterResp) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RevokeMasterResp.Unmarshal(m, b)
 }
-func (m *RevokeResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RevokeResp.Marshal(b, m, deterministic)
+func (m *RevokeMasterResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RevokeMasterResp.Marshal(b, m, deterministic)
 }
-func (m *RevokeResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RevokeResp.Merge(m, src)
+func (m *RevokeMasterResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RevokeMasterResp.Merge(m, src)
 }
-func (m *RevokeResp) XXX_Size() int {
-	return xxx_messageInfo_RevokeResp.Size(m)
+func (m *RevokeMasterResp) XXX_Size() int {
+	return xxx_messageInfo_RevokeMasterResp.Size(m)
 }
-func (m *RevokeResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_RevokeResp.DiscardUnknown(m)
+func (m *RevokeMasterResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_RevokeMasterResp.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_RevokeResp proto.InternalMessageInfo
+var xxx_messageInfo_RevokeMasterResp proto.InternalMessageInfo
 
-func (m *RevokeResp) GetResult() bool {
+func (m *RevokeMasterResp) GetResult() bool {
 	if m != nil {
 		return m.Result
 	}
 	return false
+}
+
+type TwoSplitReq struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *TwoSplitReq) Reset()         { *m = TwoSplitReq{} }
+func (m *TwoSplitReq) String() string { return proto.CompactTextString(m) }
+func (*TwoSplitReq) ProtoMessage()    {}
+func (*TwoSplitReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f9c348dec43a6705, []int{4}
+}
+
+func (m *TwoSplitReq) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_TwoSplitReq.Unmarshal(m, b)
+}
+func (m *TwoSplitReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_TwoSplitReq.Marshal(b, m, deterministic)
+}
+func (m *TwoSplitReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TwoSplitReq.Merge(m, src)
+}
+func (m *TwoSplitReq) XXX_Size() int {
+	return xxx_messageInfo_TwoSplitReq.Size(m)
+}
+func (m *TwoSplitReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_TwoSplitReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_TwoSplitReq proto.InternalMessageInfo
+
+type TwoSplitResp struct {
+	Result               bool                  `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
+	NetworkOperateMark   []*NetworkOperateMark `protobuf:"bytes,2,rep,name=networkOperateMark,proto3" json:"networkOperateMark,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
+	XXX_unrecognized     []byte                `json:"-"`
+	XXX_sizecache        int32                 `json:"-"`
+}
+
+func (m *TwoSplitResp) Reset()         { *m = TwoSplitResp{} }
+func (m *TwoSplitResp) String() string { return proto.CompactTextString(m) }
+func (*TwoSplitResp) ProtoMessage()    {}
+func (*TwoSplitResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f9c348dec43a6705, []int{5}
+}
+
+func (m *TwoSplitResp) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_TwoSplitResp.Unmarshal(m, b)
+}
+func (m *TwoSplitResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_TwoSplitResp.Marshal(b, m, deterministic)
+}
+func (m *TwoSplitResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_TwoSplitResp.Merge(m, src)
+}
+func (m *TwoSplitResp) XXX_Size() int {
+	return xxx_messageInfo_TwoSplitResp.Size(m)
+}
+func (m *TwoSplitResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_TwoSplitResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_TwoSplitResp proto.InternalMessageInfo
+
+func (m *TwoSplitResp) GetResult() bool {
+	if m != nil {
+		return m.Result
+	}
+	return false
+}
+
+func (m *TwoSplitResp) GetNetworkOperateMark() []*NetworkOperateMark {
+	if m != nil {
+		return m.NetworkOperateMark
+	}
+	return nil
 }
 
 type RandomInjectReq struct {
@@ -174,7 +260,7 @@ func (m *RandomInjectReq) Reset()         { *m = RandomInjectReq{} }
 func (m *RandomInjectReq) String() string { return proto.CompactTextString(m) }
 func (*RandomInjectReq) ProtoMessage()    {}
 func (*RandomInjectReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_f9c348dec43a6705, []int{4}
+	return fileDescriptor_f9c348dec43a6705, []int{6}
 }
 
 func (m *RandomInjectReq) XXX_Unmarshal(b []byte) error {
@@ -206,7 +292,7 @@ func (m *RandomInjectResp) Reset()         { *m = RandomInjectResp{} }
 func (m *RandomInjectResp) String() string { return proto.CompactTextString(m) }
 func (*RandomInjectResp) ProtoMessage()    {}
 func (*RandomInjectResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_f9c348dec43a6705, []int{5}
+	return fileDescriptor_f9c348dec43a6705, []int{7}
 }
 
 func (m *RandomInjectResp) XXX_Unmarshal(b []byte) error {
@@ -234,172 +320,242 @@ func (m *RandomInjectResp) GetResult() bool {
 	return false
 }
 
-type NetworkOperateReq struct {
-	Separation           []*Separation    `protobuf:"bytes,1,rep,name=separation,proto3" json:"separation,omitempty"`
-	Operator             *NetworkOperator `protobuf:"bytes,2,opt,name=operator,proto3" json:"operator,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
-	XXX_unrecognized     []byte           `json:"-"`
-	XXX_sizecache        int32            `json:"-"`
-}
-
-func (m *NetworkOperateReq) Reset()         { *m = NetworkOperateReq{} }
-func (m *NetworkOperateReq) String() string { return proto.CompactTextString(m) }
-func (*NetworkOperateReq) ProtoMessage()    {}
-func (*NetworkOperateReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_f9c348dec43a6705, []int{6}
-}
-
-func (m *NetworkOperateReq) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_NetworkOperateReq.Unmarshal(m, b)
-}
-func (m *NetworkOperateReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_NetworkOperateReq.Marshal(b, m, deterministic)
-}
-func (m *NetworkOperateReq) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_NetworkOperateReq.Merge(m, src)
-}
-func (m *NetworkOperateReq) XXX_Size() int {
-	return xxx_messageInfo_NetworkOperateReq.Size(m)
-}
-func (m *NetworkOperateReq) XXX_DiscardUnknown() {
-	xxx_messageInfo_NetworkOperateReq.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_NetworkOperateReq proto.InternalMessageInfo
-
-func (m *NetworkOperateReq) GetSeparation() []*Separation {
-	if m != nil {
-		return m.Separation
-	}
-	return nil
-}
-
-func (m *NetworkOperateReq) GetOperator() *NetworkOperator {
-	if m != nil {
-		return m.Operator
-	}
-	return nil
-}
-
-type NetworkOperateResp struct {
-	Result               bool     `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
-	Mark                 int32    `protobuf:"varint,2,opt,name=mark,proto3" json:"mark,omitempty"`
+type IsolateNodeReq struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *NetworkOperateResp) Reset()         { *m = NetworkOperateResp{} }
-func (m *NetworkOperateResp) String() string { return proto.CompactTextString(m) }
-func (*NetworkOperateResp) ProtoMessage()    {}
-func (*NetworkOperateResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_f9c348dec43a6705, []int{7}
+func (m *IsolateNodeReq) Reset()         { *m = IsolateNodeReq{} }
+func (m *IsolateNodeReq) String() string { return proto.CompactTextString(m) }
+func (*IsolateNodeReq) ProtoMessage()    {}
+func (*IsolateNodeReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f9c348dec43a6705, []int{8}
 }
 
-func (m *NetworkOperateResp) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_NetworkOperateResp.Unmarshal(m, b)
+func (m *IsolateNodeReq) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_IsolateNodeReq.Unmarshal(m, b)
 }
-func (m *NetworkOperateResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_NetworkOperateResp.Marshal(b, m, deterministic)
+func (m *IsolateNodeReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_IsolateNodeReq.Marshal(b, m, deterministic)
 }
-func (m *NetworkOperateResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_NetworkOperateResp.Merge(m, src)
+func (m *IsolateNodeReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IsolateNodeReq.Merge(m, src)
 }
-func (m *NetworkOperateResp) XXX_Size() int {
-	return xxx_messageInfo_NetworkOperateResp.Size(m)
+func (m *IsolateNodeReq) XXX_Size() int {
+	return xxx_messageInfo_IsolateNodeReq.Size(m)
 }
-func (m *NetworkOperateResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_NetworkOperateResp.DiscardUnknown(m)
+func (m *IsolateNodeReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_IsolateNodeReq.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_NetworkOperateResp proto.InternalMessageInfo
+var xxx_messageInfo_IsolateNodeReq proto.InternalMessageInfo
 
-func (m *NetworkOperateResp) GetResult() bool {
+type IsolateNodeResp struct {
+	Result               bool                  `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
+	NetworkOperateMark   []*NetworkOperateMark `protobuf:"bytes,2,rep,name=networkOperateMark,proto3" json:"networkOperateMark,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
+	XXX_unrecognized     []byte                `json:"-"`
+	XXX_sizecache        int32                 `json:"-"`
+}
+
+func (m *IsolateNodeResp) Reset()         { *m = IsolateNodeResp{} }
+func (m *IsolateNodeResp) String() string { return proto.CompactTextString(m) }
+func (*IsolateNodeResp) ProtoMessage()    {}
+func (*IsolateNodeResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f9c348dec43a6705, []int{9}
+}
+
+func (m *IsolateNodeResp) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_IsolateNodeResp.Unmarshal(m, b)
+}
+func (m *IsolateNodeResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_IsolateNodeResp.Marshal(b, m, deterministic)
+}
+func (m *IsolateNodeResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_IsolateNodeResp.Merge(m, src)
+}
+func (m *IsolateNodeResp) XXX_Size() int {
+	return xxx_messageInfo_IsolateNodeResp.Size(m)
+}
+func (m *IsolateNodeResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_IsolateNodeResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_IsolateNodeResp proto.InternalMessageInfo
+
+func (m *IsolateNodeResp) GetResult() bool {
 	if m != nil {
 		return m.Result
 	}
 	return false
 }
 
-func (m *NetworkOperateResp) GetMark() int32 {
+func (m *IsolateNodeResp) GetNetworkOperateMark() []*NetworkOperateMark {
 	if m != nil {
-		return m.Mark
+		return m.NetworkOperateMark
 	}
-	return 0
+	return nil
 }
 
-type RevokeNetworkOperateReq struct {
-	Mark                 int32    `protobuf:"varint,1,opt,name=mark,proto3" json:"mark,omitempty"`
+type NetworkOperateMasterReq struct {
+	NetworkOperateMark   []*NetworkOperateMark `protobuf:"bytes,1,rep,name=networkOperateMark,proto3" json:"networkOperateMark,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
+	XXX_unrecognized     []byte                `json:"-"`
+	XXX_sizecache        int32                 `json:"-"`
+}
+
+func (m *NetworkOperateMasterReq) Reset()         { *m = NetworkOperateMasterReq{} }
+func (m *NetworkOperateMasterReq) String() string { return proto.CompactTextString(m) }
+func (*NetworkOperateMasterReq) ProtoMessage()    {}
+func (*NetworkOperateMasterReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f9c348dec43a6705, []int{10}
+}
+
+func (m *NetworkOperateMasterReq) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_NetworkOperateMasterReq.Unmarshal(m, b)
+}
+func (m *NetworkOperateMasterReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_NetworkOperateMasterReq.Marshal(b, m, deterministic)
+}
+func (m *NetworkOperateMasterReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_NetworkOperateMasterReq.Merge(m, src)
+}
+func (m *NetworkOperateMasterReq) XXX_Size() int {
+	return xxx_messageInfo_NetworkOperateMasterReq.Size(m)
+}
+func (m *NetworkOperateMasterReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_NetworkOperateMasterReq.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_NetworkOperateMasterReq proto.InternalMessageInfo
+
+func (m *NetworkOperateMasterReq) GetNetworkOperateMark() []*NetworkOperateMark {
+	if m != nil {
+		return m.NetworkOperateMark
+	}
+	return nil
+}
+
+type NetworkOperateMasterResp struct {
+	Result               bool                  `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
+	NetworkOperateMark   []*NetworkOperateMark `protobuf:"bytes,2,rep,name=networkOperateMark,proto3" json:"networkOperateMark,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}              `json:"-"`
+	XXX_unrecognized     []byte                `json:"-"`
+	XXX_sizecache        int32                 `json:"-"`
+}
+
+func (m *NetworkOperateMasterResp) Reset()         { *m = NetworkOperateMasterResp{} }
+func (m *NetworkOperateMasterResp) String() string { return proto.CompactTextString(m) }
+func (*NetworkOperateMasterResp) ProtoMessage()    {}
+func (*NetworkOperateMasterResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f9c348dec43a6705, []int{11}
+}
+
+func (m *NetworkOperateMasterResp) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_NetworkOperateMasterResp.Unmarshal(m, b)
+}
+func (m *NetworkOperateMasterResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_NetworkOperateMasterResp.Marshal(b, m, deterministic)
+}
+func (m *NetworkOperateMasterResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_NetworkOperateMasterResp.Merge(m, src)
+}
+func (m *NetworkOperateMasterResp) XXX_Size() int {
+	return xxx_messageInfo_NetworkOperateMasterResp.Size(m)
+}
+func (m *NetworkOperateMasterResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_NetworkOperateMasterResp.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_NetworkOperateMasterResp proto.InternalMessageInfo
+
+func (m *NetworkOperateMasterResp) GetResult() bool {
+	if m != nil {
+		return m.Result
+	}
+	return false
+}
+
+func (m *NetworkOperateMasterResp) GetNetworkOperateMark() []*NetworkOperateMark {
+	if m != nil {
+		return m.NetworkOperateMark
+	}
+	return nil
+}
+
+type NetworkRevokeOperateMasterReq struct {
+	Marks                []int32  `protobuf:"varint,1,rep,packed,name=marks,proto3" json:"marks,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *RevokeNetworkOperateReq) Reset()         { *m = RevokeNetworkOperateReq{} }
-func (m *RevokeNetworkOperateReq) String() string { return proto.CompactTextString(m) }
-func (*RevokeNetworkOperateReq) ProtoMessage()    {}
-func (*RevokeNetworkOperateReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_f9c348dec43a6705, []int{8}
+func (m *NetworkRevokeOperateMasterReq) Reset()         { *m = NetworkRevokeOperateMasterReq{} }
+func (m *NetworkRevokeOperateMasterReq) String() string { return proto.CompactTextString(m) }
+func (*NetworkRevokeOperateMasterReq) ProtoMessage()    {}
+func (*NetworkRevokeOperateMasterReq) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f9c348dec43a6705, []int{12}
 }
 
-func (m *RevokeNetworkOperateReq) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RevokeNetworkOperateReq.Unmarshal(m, b)
+func (m *NetworkRevokeOperateMasterReq) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_NetworkRevokeOperateMasterReq.Unmarshal(m, b)
 }
-func (m *RevokeNetworkOperateReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RevokeNetworkOperateReq.Marshal(b, m, deterministic)
+func (m *NetworkRevokeOperateMasterReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_NetworkRevokeOperateMasterReq.Marshal(b, m, deterministic)
 }
-func (m *RevokeNetworkOperateReq) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RevokeNetworkOperateReq.Merge(m, src)
+func (m *NetworkRevokeOperateMasterReq) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_NetworkRevokeOperateMasterReq.Merge(m, src)
 }
-func (m *RevokeNetworkOperateReq) XXX_Size() int {
-	return xxx_messageInfo_RevokeNetworkOperateReq.Size(m)
+func (m *NetworkRevokeOperateMasterReq) XXX_Size() int {
+	return xxx_messageInfo_NetworkRevokeOperateMasterReq.Size(m)
 }
-func (m *RevokeNetworkOperateReq) XXX_DiscardUnknown() {
-	xxx_messageInfo_RevokeNetworkOperateReq.DiscardUnknown(m)
+func (m *NetworkRevokeOperateMasterReq) XXX_DiscardUnknown() {
+	xxx_messageInfo_NetworkRevokeOperateMasterReq.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_RevokeNetworkOperateReq proto.InternalMessageInfo
+var xxx_messageInfo_NetworkRevokeOperateMasterReq proto.InternalMessageInfo
 
-func (m *RevokeNetworkOperateReq) GetMark() int32 {
+func (m *NetworkRevokeOperateMasterReq) GetMarks() []int32 {
 	if m != nil {
-		return m.Mark
+		return m.Marks
 	}
-	return 0
+	return nil
 }
 
-type RevokeNetworkOperateResp struct {
+type NetworkRevokeOperateMasterResp struct {
 	Result               bool     `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *RevokeNetworkOperateResp) Reset()         { *m = RevokeNetworkOperateResp{} }
-func (m *RevokeNetworkOperateResp) String() string { return proto.CompactTextString(m) }
-func (*RevokeNetworkOperateResp) ProtoMessage()    {}
-func (*RevokeNetworkOperateResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_f9c348dec43a6705, []int{9}
+func (m *NetworkRevokeOperateMasterResp) Reset()         { *m = NetworkRevokeOperateMasterResp{} }
+func (m *NetworkRevokeOperateMasterResp) String() string { return proto.CompactTextString(m) }
+func (*NetworkRevokeOperateMasterResp) ProtoMessage()    {}
+func (*NetworkRevokeOperateMasterResp) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f9c348dec43a6705, []int{13}
 }
 
-func (m *RevokeNetworkOperateResp) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RevokeNetworkOperateResp.Unmarshal(m, b)
+func (m *NetworkRevokeOperateMasterResp) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_NetworkRevokeOperateMasterResp.Unmarshal(m, b)
 }
-func (m *RevokeNetworkOperateResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RevokeNetworkOperateResp.Marshal(b, m, deterministic)
+func (m *NetworkRevokeOperateMasterResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_NetworkRevokeOperateMasterResp.Marshal(b, m, deterministic)
 }
-func (m *RevokeNetworkOperateResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RevokeNetworkOperateResp.Merge(m, src)
+func (m *NetworkRevokeOperateMasterResp) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_NetworkRevokeOperateMasterResp.Merge(m, src)
 }
-func (m *RevokeNetworkOperateResp) XXX_Size() int {
-	return xxx_messageInfo_RevokeNetworkOperateResp.Size(m)
+func (m *NetworkRevokeOperateMasterResp) XXX_Size() int {
+	return xxx_messageInfo_NetworkRevokeOperateMasterResp.Size(m)
 }
-func (m *RevokeNetworkOperateResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_RevokeNetworkOperateResp.DiscardUnknown(m)
+func (m *NetworkRevokeOperateMasterResp) XXX_DiscardUnknown() {
+	xxx_messageInfo_NetworkRevokeOperateMasterResp.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_RevokeNetworkOperateResp proto.InternalMessageInfo
+var xxx_messageInfo_NetworkRevokeOperateMasterResp proto.InternalMessageInfo
 
-func (m *RevokeNetworkOperateResp) GetResult() bool {
+func (m *NetworkRevokeOperateMasterResp) GetResult() bool {
 	if m != nil {
 		return m.Result
 	}
@@ -407,44 +563,52 @@ func (m *RevokeNetworkOperateResp) GetResult() bool {
 }
 
 func init() {
-	proto.RegisterType((*PrepareReq)(nil), "pb.prepareReq")
-	proto.RegisterType((*PrepareResp)(nil), "pb.prepareResp")
-	proto.RegisterType((*RevokeReq)(nil), "pb.revokeReq")
-	proto.RegisterType((*RevokeResp)(nil), "pb.revokeResp")
+	proto.RegisterType((*PrepareMasterReq)(nil), "pb.prepareMasterReq")
+	proto.RegisterType((*PrepareMasterResp)(nil), "pb.prepareMasterResp")
+	proto.RegisterType((*RevokeMasterReq)(nil), "pb.revokeMasterReq")
+	proto.RegisterType((*RevokeMasterResp)(nil), "pb.revokeMasterResp")
+	proto.RegisterType((*TwoSplitReq)(nil), "pb.twoSplitReq")
+	proto.RegisterType((*TwoSplitResp)(nil), "pb.twoSplitResp")
 	proto.RegisterType((*RandomInjectReq)(nil), "pb.randomInjectReq")
 	proto.RegisterType((*RandomInjectResp)(nil), "pb.randomInjectResp")
-	proto.RegisterType((*NetworkOperateReq)(nil), "pb.networkOperateReq")
-	proto.RegisterType((*NetworkOperateResp)(nil), "pb.networkOperateResp")
-	proto.RegisterType((*RevokeNetworkOperateReq)(nil), "pb.revokeNetworkOperateReq")
-	proto.RegisterType((*RevokeNetworkOperateResp)(nil), "pb.revokeNetworkOperateResp")
+	proto.RegisterType((*IsolateNodeReq)(nil), "pb.isolateNodeReq")
+	proto.RegisterType((*IsolateNodeResp)(nil), "pb.isolateNodeResp")
+	proto.RegisterType((*NetworkOperateMasterReq)(nil), "pb.networkOperateMasterReq")
+	proto.RegisterType((*NetworkOperateMasterResp)(nil), "pb.networkOperateMasterResp")
+	proto.RegisterType((*NetworkRevokeOperateMasterReq)(nil), "pb.networkRevokeOperateMasterReq")
+	proto.RegisterType((*NetworkRevokeOperateMasterResp)(nil), "pb.networkRevokeOperateMasterResp")
 }
 
 func init() { proto.RegisterFile("master.proto", fileDescriptor_f9c348dec43a6705) }
 
 var fileDescriptor_f9c348dec43a6705 = []byte{
-	// 338 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x7c, 0x53, 0x4d, 0x4f, 0xb3, 0x40,
-	0x10, 0x7e, 0xe9, 0xab, 0xb5, 0x0e, 0xd8, 0xda, 0xb1, 0x56, 0x82, 0x1e, 0x1a, 0xa2, 0x49, 0x35,
-	0x8a, 0x09, 0x1e, 0xbd, 0xe8, 0xd1, 0x83, 0x9a, 0xe0, 0x2f, 0xd8, 0xd6, 0x3d, 0x68, 0x85, 0x5d,
-	0x87, 0x55, 0xff, 0x99, 0xbf, 0xcf, 0xec, 0xf4, 0x0b, 0x4a, 0xe9, 0x8d, 0x99, 0x7d, 0x3e, 0x26,
-	0xcf, 0x13, 0xc0, 0x4b, 0x45, 0x6e, 0x24, 0x45, 0x9a, 0x94, 0x51, 0xd8, 0xd0, 0xa3, 0xc0, 0x1b,
-	0xab, 0x34, 0x55, 0xd9, 0x74, 0x13, 0x7a, 0x00, 0x9a, 0xa4, 0x16, 0x24, 0x13, 0xf9, 0x19, 0x9e,
-	0x81, 0xbb, 0x98, 0x72, 0x8d, 0x7d, 0x68, 0x92, 0xcc, 0xbf, 0x3e, 0x8c, 0xef, 0x0c, 0x9c, 0x61,
-	0x2b, 0x99, 0x4d, 0xa1, 0x0b, 0xbb, 0x24, 0xbf, 0xd5, 0x84, 0x39, 0xa7, 0x00, 0xf3, 0x61, 0x03,
-	0xa5, 0x0b, 0x1d, 0x12, 0xd9, 0xab, 0x4a, 0x1f, 0xb2, 0x77, 0x39, 0x36, 0x96, 0x78, 0x01, 0xfb,
-	0xe5, 0xd5, 0x06, 0xba, 0x81, 0x6e, 0x26, 0xcd, 0x8f, 0xa2, 0xc9, 0xb3, 0x96, 0x24, 0x8c, 0x75,
-	0xc6, 0x08, 0x20, 0xb7, 0xc7, 0x0a, 0xf3, 0xa6, 0x32, 0xdf, 0x19, 0xfc, 0x1f, 0xba, 0x71, 0x3b,
-	0xd2, 0xa3, 0x68, 0xb9, 0x4d, 0x0a, 0x08, 0xbc, 0x86, 0x96, 0x62, 0xb6, 0x22, 0xbf, 0x31, 0x70,
-	0x86, 0x6e, 0x7c, 0x60, 0xd1, 0x25, 0x61, 0x45, 0xc9, 0x02, 0x14, 0xde, 0x01, 0xae, 0xba, 0xd6,
-	0xdf, 0x88, 0x08, 0x5b, 0xa9, 0xa0, 0x09, 0x4b, 0x6f, 0x27, 0xfc, 0x1d, 0x5e, 0xc1, 0xd1, 0x34,
-	0x9c, 0xa7, 0xca, 0xf5, 0x73, 0xb8, 0x53, 0x80, 0xc7, 0xe0, 0xaf, 0x87, 0xd7, 0xdb, 0xc6, 0xbf,
-	0x0d, 0x68, 0x3e, 0x72, 0xc9, 0x78, 0x09, 0x3b, 0xb3, 0xfa, 0x90, 0x73, 0x58, 0x36, 0x1b, 0x74,
-	0x4a, 0x73, 0xae, 0xc3, 0x7f, 0x78, 0x6e, 0x05, 0xad, 0x19, 0xee, 0xd9, 0xc7, 0x45, 0xa3, 0x41,
-	0xbb, 0x38, 0x32, 0xf4, 0x16, 0xbc, 0x62, 0x55, 0xc8, 0xb9, 0xad, 0xf4, 0x19, 0xf4, 0xaa, 0x4b,
-	0x26, 0xdf, 0x43, 0xbb, 0x9c, 0x22, 0x1e, 0x56, 0x62, 0x67, 0xdf, 0xfe, 0xba, 0x35, 0x4b, 0xbc,
-	0x40, 0x6f, 0x5d, 0x2e, 0x78, 0xbc, 0xbc, 0xb4, 0x12, 0x70, 0x70, 0x52, 0xff, 0x68, 0x45, 0x47,
-	0x4d, 0xfe, 0x03, 0x6e, 0xfe, 0x02, 0x00, 0x00, 0xff, 0xff, 0xd9, 0x15, 0x23, 0x28, 0x23, 0x03,
-	0x00, 0x00,
+	// 410 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xbc, 0x54, 0x4d, 0xab, 0xda, 0x40,
+	0x14, 0xd5, 0x88, 0xd6, 0x5e, 0x53, 0x8d, 0x63, 0x6a, 0x25, 0xfd, 0xc0, 0xce, 0x4a, 0x5a, 0xb0,
+	0x60, 0x11, 0x84, 0xee, 0x0b, 0x5d, 0x68, 0x21, 0xfd, 0x01, 0x65, 0x34, 0xb3, 0x48, 0x63, 0x32,
+	0xe3, 0x64, 0x5a, 0xa1, 0xff, 0xf2, 0xfd, 0xa3, 0xc7, 0x4c, 0x12, 0xcc, 0x24, 0xd1, 0xc7, 0xdb,
+	0xb8, 0xbc, 0x67, 0xce, 0xb9, 0x1f, 0xb9, 0xe7, 0x06, 0xec, 0x98, 0xa4, 0x92, 0x8a, 0x25, 0x17,
+	0x4c, 0x32, 0x64, 0xf1, 0xbd, 0x67, 0x1f, 0x58, 0x1c, 0xb3, 0x24, 0x43, 0x30, 0x06, 0x87, 0x0b,
+	0xca, 0x89, 0xa0, 0x5b, 0x4d, 0xf4, 0xe9, 0x09, 0x0d, 0xc1, 0x0a, 0x83, 0x59, 0x7b, 0xde, 0x5e,
+	0xbc, 0xf4, 0xad, 0x30, 0xc0, 0x9f, 0x61, 0x5c, 0xe1, 0xa4, 0x1c, 0x4d, 0xa1, 0x27, 0x68, 0xfa,
+	0xf7, 0x28, 0x35, 0xb1, 0xef, 0xe7, 0x11, 0x1e, 0xc3, 0x48, 0xd0, 0x7f, 0x2c, 0xba, 0xe4, 0xc3,
+	0x9f, 0xc0, 0x31, 0xa1, 0x1b, 0xf2, 0x57, 0x30, 0x90, 0x67, 0xf6, 0x8b, 0x1f, 0x43, 0xa9, 0xa4,
+	0x09, 0xd8, 0x97, 0xf0, 0xba, 0x0c, 0x7d, 0x07, 0x94, 0x50, 0x79, 0x66, 0x22, 0xfa, 0xc9, 0xa9,
+	0x20, 0x92, 0x6e, 0x89, 0x88, 0x66, 0xd6, 0xbc, 0xb3, 0x18, 0xac, 0xa6, 0x4b, 0xbe, 0x5f, 0xd6,
+	0x5f, 0xfd, 0x06, 0x85, 0xee, 0x9e, 0x24, 0x01, 0x8b, 0x7f, 0x24, 0x7f, 0xe8, 0x41, 0x16, 0xdd,
+	0x1b, 0xd0, 0x8d, 0xee, 0x1d, 0x18, 0x86, 0x29, 0x3b, 0x12, 0x49, 0x77, 0x2c, 0xa0, 0x4a, 0x7d,
+	0x82, 0x91, 0x81, 0xdc, 0x61, 0x06, 0x02, 0x6f, 0xaa, 0x68, 0xb1, 0xd9, 0xe6, 0x12, 0xed, 0x67,
+	0x97, 0xf8, 0x0f, 0xb3, 0xe6, 0x12, 0x77, 0x18, 0x6f, 0x0d, 0xef, 0x73, 0xd4, 0xd7, 0xa6, 0xaa,
+	0x0d, 0xe9, 0x42, 0x37, 0x26, 0x22, 0x4a, 0xf5, 0x5c, 0x5d, 0x3f, 0x0b, 0xf0, 0x06, 0x3e, 0xdc,
+	0x92, 0x5d, 0x6f, 0x7c, 0xf5, 0xd0, 0x81, 0x5e, 0x46, 0x43, 0x1b, 0x78, 0x91, 0x5f, 0x02, 0x72,
+	0x55, 0xcb, 0xd5, 0xd3, 0xf1, 0x5e, 0x37, 0xa0, 0x29, 0xc7, 0x2d, 0xb4, 0x56, 0xc9, 0x55, 0x5d,
+	0x34, 0x51, 0x94, 0xca, 0x89, 0x78, 0x6e, 0x1d, 0xd4, 0xb2, 0x6f, 0x60, 0x97, 0xcd, 0x97, 0x8b,
+	0x4d, 0x87, 0xe6, 0xe2, 0x8a, 0x47, 0x71, 0x0b, 0x7d, 0x81, 0x7e, 0x71, 0x3c, 0x68, 0xa4, 0x38,
+	0xa5, 0xcb, 0xf2, 0x1c, 0x13, 0xd0, 0x82, 0x0d, 0x0c, 0x4a, 0x66, 0x45, 0x48, 0x51, 0x4c, 0x3f,
+	0x7b, 0x93, 0x1a, 0xa6, 0x95, 0x5b, 0x18, 0x9a, 0xab, 0x42, 0x6f, 0x9b, 0x56, 0x5a, 0x8c, 0xfb,
+	0xee, 0xfa, 0xa3, 0x4e, 0xf7, 0x1b, 0xdc, 0xec, 0x63, 0xec, 0xcc, 0xa4, 0x1f, 0x4b, 0xba, 0xe6,
+	0xed, 0x7b, 0xf8, 0x29, 0x8a, 0x2a, 0xb0, 0xef, 0xe9, 0xbf, 0xdf, 0xd7, 0xc7, 0x00, 0x00, 0x00,
+	0xff, 0xff, 0xa6, 0x3e, 0x9a, 0xc4, 0x1f, 0x05, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -459,11 +623,13 @@ const _ = grpc.SupportPackageIsVersion4
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type MasterClient interface {
-	Prepare(ctx context.Context, in *PrepareReq, opts ...grpc.CallOption) (*PrepareResp, error)
-	Revoke(ctx context.Context, in *RevokeReq, opts ...grpc.CallOption) (*RevokeResp, error)
+	Prepare(ctx context.Context, in *PrepareMasterReq, opts ...grpc.CallOption) (*PrepareMasterResp, error)
+	Revoke(ctx context.Context, in *RevokeMasterReq, opts ...grpc.CallOption) (*RevokeMasterResp, error)
 	RandomInject(ctx context.Context, in *RandomInjectReq, opts ...grpc.CallOption) (*RandomInjectResp, error)
-	NetworkOperate(ctx context.Context, in *NetworkOperateReq, opts ...grpc.CallOption) (*NetworkOperateResp, error)
-	RevokeNetworkOperate(ctx context.Context, in *RevokeNetworkOperateReq, opts ...grpc.CallOption) (*RevokeNetworkOperateResp, error)
+	TwoSplit(ctx context.Context, in *TwoSplitReq, opts ...grpc.CallOption) (*TwoSplitResp, error)
+	IsolateNode(ctx context.Context, in *IsolateNodeReq, opts ...grpc.CallOption) (*IsolateNodeResp, error)
+	NetworkOperate(ctx context.Context, in *NetworkOperateMasterReq, opts ...grpc.CallOption) (*NetworkOperateMasterResp, error)
+	RevokeNetworkOperate(ctx context.Context, in *NetworkRevokeOperateMasterReq, opts ...grpc.CallOption) (*NetworkRevokeOperateMasterResp, error)
 }
 
 type masterClient struct {
@@ -474,8 +640,8 @@ func NewMasterClient(cc *grpc.ClientConn) MasterClient {
 	return &masterClient{cc}
 }
 
-func (c *masterClient) Prepare(ctx context.Context, in *PrepareReq, opts ...grpc.CallOption) (*PrepareResp, error) {
-	out := new(PrepareResp)
+func (c *masterClient) Prepare(ctx context.Context, in *PrepareMasterReq, opts ...grpc.CallOption) (*PrepareMasterResp, error) {
+	out := new(PrepareMasterResp)
 	err := c.cc.Invoke(ctx, "/pb.Master/prepare", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -483,8 +649,8 @@ func (c *masterClient) Prepare(ctx context.Context, in *PrepareReq, opts ...grpc
 	return out, nil
 }
 
-func (c *masterClient) Revoke(ctx context.Context, in *RevokeReq, opts ...grpc.CallOption) (*RevokeResp, error) {
-	out := new(RevokeResp)
+func (c *masterClient) Revoke(ctx context.Context, in *RevokeMasterReq, opts ...grpc.CallOption) (*RevokeMasterResp, error) {
+	out := new(RevokeMasterResp)
 	err := c.cc.Invoke(ctx, "/pb.Master/revoke", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -501,8 +667,26 @@ func (c *masterClient) RandomInject(ctx context.Context, in *RandomInjectReq, op
 	return out, nil
 }
 
-func (c *masterClient) NetworkOperate(ctx context.Context, in *NetworkOperateReq, opts ...grpc.CallOption) (*NetworkOperateResp, error) {
-	out := new(NetworkOperateResp)
+func (c *masterClient) TwoSplit(ctx context.Context, in *TwoSplitReq, opts ...grpc.CallOption) (*TwoSplitResp, error) {
+	out := new(TwoSplitResp)
+	err := c.cc.Invoke(ctx, "/pb.Master/twoSplit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *masterClient) IsolateNode(ctx context.Context, in *IsolateNodeReq, opts ...grpc.CallOption) (*IsolateNodeResp, error) {
+	out := new(IsolateNodeResp)
+	err := c.cc.Invoke(ctx, "/pb.Master/isolateNode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *masterClient) NetworkOperate(ctx context.Context, in *NetworkOperateMasterReq, opts ...grpc.CallOption) (*NetworkOperateMasterResp, error) {
+	out := new(NetworkOperateMasterResp)
 	err := c.cc.Invoke(ctx, "/pb.Master/networkOperate", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -510,8 +694,8 @@ func (c *masterClient) NetworkOperate(ctx context.Context, in *NetworkOperateReq
 	return out, nil
 }
 
-func (c *masterClient) RevokeNetworkOperate(ctx context.Context, in *RevokeNetworkOperateReq, opts ...grpc.CallOption) (*RevokeNetworkOperateResp, error) {
-	out := new(RevokeNetworkOperateResp)
+func (c *masterClient) RevokeNetworkOperate(ctx context.Context, in *NetworkRevokeOperateMasterReq, opts ...grpc.CallOption) (*NetworkRevokeOperateMasterResp, error) {
+	out := new(NetworkRevokeOperateMasterResp)
 	err := c.cc.Invoke(ctx, "/pb.Master/revokeNetworkOperate", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -521,30 +705,38 @@ func (c *masterClient) RevokeNetworkOperate(ctx context.Context, in *RevokeNetwo
 
 // MasterServer is the server API for Master service.
 type MasterServer interface {
-	Prepare(context.Context, *PrepareReq) (*PrepareResp, error)
-	Revoke(context.Context, *RevokeReq) (*RevokeResp, error)
+	Prepare(context.Context, *PrepareMasterReq) (*PrepareMasterResp, error)
+	Revoke(context.Context, *RevokeMasterReq) (*RevokeMasterResp, error)
 	RandomInject(context.Context, *RandomInjectReq) (*RandomInjectResp, error)
-	NetworkOperate(context.Context, *NetworkOperateReq) (*NetworkOperateResp, error)
-	RevokeNetworkOperate(context.Context, *RevokeNetworkOperateReq) (*RevokeNetworkOperateResp, error)
+	TwoSplit(context.Context, *TwoSplitReq) (*TwoSplitResp, error)
+	IsolateNode(context.Context, *IsolateNodeReq) (*IsolateNodeResp, error)
+	NetworkOperate(context.Context, *NetworkOperateMasterReq) (*NetworkOperateMasterResp, error)
+	RevokeNetworkOperate(context.Context, *NetworkRevokeOperateMasterReq) (*NetworkRevokeOperateMasterResp, error)
 }
 
 // UnimplementedMasterServer can be embedded to have forward compatible implementations.
 type UnimplementedMasterServer struct {
 }
 
-func (*UnimplementedMasterServer) Prepare(ctx context.Context, req *PrepareReq) (*PrepareResp, error) {
+func (*UnimplementedMasterServer) Prepare(ctx context.Context, req *PrepareMasterReq) (*PrepareMasterResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Prepare not implemented")
 }
-func (*UnimplementedMasterServer) Revoke(ctx context.Context, req *RevokeReq) (*RevokeResp, error) {
+func (*UnimplementedMasterServer) Revoke(ctx context.Context, req *RevokeMasterReq) (*RevokeMasterResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Revoke not implemented")
 }
 func (*UnimplementedMasterServer) RandomInject(ctx context.Context, req *RandomInjectReq) (*RandomInjectResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RandomInject not implemented")
 }
-func (*UnimplementedMasterServer) NetworkOperate(ctx context.Context, req *NetworkOperateReq) (*NetworkOperateResp, error) {
+func (*UnimplementedMasterServer) TwoSplit(ctx context.Context, req *TwoSplitReq) (*TwoSplitResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TwoSplit not implemented")
+}
+func (*UnimplementedMasterServer) IsolateNode(ctx context.Context, req *IsolateNodeReq) (*IsolateNodeResp, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IsolateNode not implemented")
+}
+func (*UnimplementedMasterServer) NetworkOperate(ctx context.Context, req *NetworkOperateMasterReq) (*NetworkOperateMasterResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NetworkOperate not implemented")
 }
-func (*UnimplementedMasterServer) RevokeNetworkOperate(ctx context.Context, req *RevokeNetworkOperateReq) (*RevokeNetworkOperateResp, error) {
+func (*UnimplementedMasterServer) RevokeNetworkOperate(ctx context.Context, req *NetworkRevokeOperateMasterReq) (*NetworkRevokeOperateMasterResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RevokeNetworkOperate not implemented")
 }
 
@@ -553,7 +745,7 @@ func RegisterMasterServer(s *grpc.Server, srv MasterServer) {
 }
 
 func _Master_Prepare_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PrepareReq)
+	in := new(PrepareMasterReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -565,13 +757,13 @@ func _Master_Prepare_Handler(srv interface{}, ctx context.Context, dec func(inte
 		FullMethod: "/pb.Master/Prepare",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MasterServer).Prepare(ctx, req.(*PrepareReq))
+		return srv.(MasterServer).Prepare(ctx, req.(*PrepareMasterReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Master_Revoke_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RevokeReq)
+	in := new(RevokeMasterReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -583,7 +775,7 @@ func _Master_Revoke_Handler(srv interface{}, ctx context.Context, dec func(inter
 		FullMethod: "/pb.Master/Revoke",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MasterServer).Revoke(ctx, req.(*RevokeReq))
+		return srv.(MasterServer).Revoke(ctx, req.(*RevokeMasterReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -606,8 +798,44 @@ func _Master_RandomInject_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Master_TwoSplit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TwoSplitReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MasterServer).TwoSplit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.Master/TwoSplit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MasterServer).TwoSplit(ctx, req.(*TwoSplitReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Master_IsolateNode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(IsolateNodeReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MasterServer).IsolateNode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/pb.Master/IsolateNode",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MasterServer).IsolateNode(ctx, req.(*IsolateNodeReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _Master_NetworkOperate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(NetworkOperateReq)
+	in := new(NetworkOperateMasterReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -619,13 +847,13 @@ func _Master_NetworkOperate_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: "/pb.Master/NetworkOperate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MasterServer).NetworkOperate(ctx, req.(*NetworkOperateReq))
+		return srv.(MasterServer).NetworkOperate(ctx, req.(*NetworkOperateMasterReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Master_RevokeNetworkOperate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RevokeNetworkOperateReq)
+	in := new(NetworkRevokeOperateMasterReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -637,7 +865,7 @@ func _Master_RevokeNetworkOperate_Handler(srv interface{}, ctx context.Context, 
 		FullMethod: "/pb.Master/RevokeNetworkOperate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MasterServer).RevokeNetworkOperate(ctx, req.(*RevokeNetworkOperateReq))
+		return srv.(MasterServer).RevokeNetworkOperate(ctx, req.(*NetworkRevokeOperateMasterReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -657,6 +885,14 @@ var _Master_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "randomInject",
 			Handler:    _Master_RandomInject_Handler,
+		},
+		{
+			MethodName: "twoSplit",
+			Handler:    _Master_TwoSplit_Handler,
+		},
+		{
+			MethodName: "isolateNode",
+			Handler:    _Master_IsolateNode_Handler,
 		},
 		{
 			MethodName: "networkOperate",

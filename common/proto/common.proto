@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package pb;
 
+option java_package = "github.com.evazca";
+
 message separation{
     string ip = 1;
     int32 port = 2;
@@ -11,6 +13,13 @@ message separation{
 message networkOperator {
     networkOperate operate = 1;
     int32 probability = 2;
+}
+
+message networkOperateMark {
+    int32 mark = 1;
+    string ip = 2;
+    repeated separation separation = 3;
+    networkOperator networkOperator = 4;
 }
 
 enum networkOperate {
@@ -25,3 +34,10 @@ enum ErrorType {
     NotInProcessError = 3;
     UnMatchIdError = 4;
 }
+
+message commonResp {
+    bool result = 1;
+    ErrorType errorType = 2;
+    string id = 3;
+}
+

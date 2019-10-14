@@ -4,28 +4,40 @@ package pb;
 
 import "common.proto";
 
+option java_package = "github.com.evazca";
+
 service Master {
-    rpc prepare (prepareReq) returns (prepareResp) {}
-    rpc revoke (revokeReq) returns (revokeResp) {}
+    rpc prepare (prepareMasterReq) returns (prepareMasterResp) {}
+    rpc revoke (revokeMasterReq) returns (revokeMasterResp) {}
     rpc randomInject (randomInjectReq) returns (randomInjectResp) {}
-    rpc networkOperate(networkOperateReq) returns (networkOperateResp) {}
-    rpc revokeNetworkOperate (revokeNetworkOperateReq) returns (revokeNetworkOperateResp) {}
+    rpc twoSplit (twoSplitReq) returns (twoSplitResp) {}
+    rpc isolateNode (isolateNodeReq) returns (isolateNodeResp) {}
+    rpc networkOperate(networkOperateMasterReq) returns (networkOperateMasterResp) {}
+    rpc revokeNetworkOperate (networkRevokeOperateMasterReq) returns (networkRevokeOperateMasterResp) {}
 }
 
-message prepareReq {
-
+message prepareMasterReq {
 }
 
-message prepareResp {
+message prepareMasterResp {
     bool result = 1;
 }
 
-message revokeReq {
+message revokeMasterReq {
 
 }
 
-message revokeResp {
+message revokeMasterResp {
     bool result = 1;
+}
+
+message twoSplitReq {
+
+}
+
+message twoSplitResp {
+    bool result = 1;
+    repeated networkOperateMark networkOperateMark = 2;
 }
 
 message randomInjectReq {
@@ -36,22 +48,29 @@ message randomInjectResp {
     bool result = 1;
 }
 
-message networkOperateReq {
-    repeated separation separation = 1;
-    networkOperator operator = 2;
+message isolateNodeReq {
+
 }
 
-message networkOperateResp {
+message isolateNodeResp {
     bool result = 1;
-    int32 mark = 2;
+    repeated networkOperateMark networkOperateMark = 2;
 }
 
-message revokeNetworkOperateReq {
-    int32 mark = 1;
+message networkOperateMasterReq {
+    repeated networkOperateMark networkOperateMark = 1;
 }
 
+message networkOperateMasterResp {
+    bool result = 1;
+    repeated networkOperateMark networkOperateMark = 2;
+}
 
-message revokeNetworkOperateResp {
+message networkRevokeOperateMasterReq {
+    repeated int32 marks = 1;
+}
+
+message networkRevokeOperateMasterResp {
     bool result = 1;
 }
 

@@ -188,176 +188,19 @@ func (m *RevokeResp) GetCommonResp() *CommonResp {
 	return nil
 }
 
-type PrepareNetworkInjectReq struct {
-	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *PrepareNetworkInjectReq) Reset()         { *m = PrepareNetworkInjectReq{} }
-func (m *PrepareNetworkInjectReq) String() string { return proto.CompactTextString(m) }
-func (*PrepareNetworkInjectReq) ProtoMessage()    {}
-func (*PrepareNetworkInjectReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_56ede974c0020f77, []int{4}
-}
-
-func (m *PrepareNetworkInjectReq) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_PrepareNetworkInjectReq.Unmarshal(m, b)
-}
-func (m *PrepareNetworkInjectReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_PrepareNetworkInjectReq.Marshal(b, m, deterministic)
-}
-func (m *PrepareNetworkInjectReq) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PrepareNetworkInjectReq.Merge(m, src)
-}
-func (m *PrepareNetworkInjectReq) XXX_Size() int {
-	return xxx_messageInfo_PrepareNetworkInjectReq.Size(m)
-}
-func (m *PrepareNetworkInjectReq) XXX_DiscardUnknown() {
-	xxx_messageInfo_PrepareNetworkInjectReq.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PrepareNetworkInjectReq proto.InternalMessageInfo
-
-func (m *PrepareNetworkInjectReq) GetId() string {
-	if m != nil {
-		return m.Id
-	}
-	return ""
-}
-
-type PrepareNetworkInjectResp struct {
-	CommonResp           *CommonResp `protobuf:"bytes,1,opt,name=commonResp,proto3" json:"commonResp,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
-	XXX_unrecognized     []byte      `json:"-"`
-	XXX_sizecache        int32       `json:"-"`
-}
-
-func (m *PrepareNetworkInjectResp) Reset()         { *m = PrepareNetworkInjectResp{} }
-func (m *PrepareNetworkInjectResp) String() string { return proto.CompactTextString(m) }
-func (*PrepareNetworkInjectResp) ProtoMessage()    {}
-func (*PrepareNetworkInjectResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_56ede974c0020f77, []int{5}
-}
-
-func (m *PrepareNetworkInjectResp) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_PrepareNetworkInjectResp.Unmarshal(m, b)
-}
-func (m *PrepareNetworkInjectResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_PrepareNetworkInjectResp.Marshal(b, m, deterministic)
-}
-func (m *PrepareNetworkInjectResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_PrepareNetworkInjectResp.Merge(m, src)
-}
-func (m *PrepareNetworkInjectResp) XXX_Size() int {
-	return xxx_messageInfo_PrepareNetworkInjectResp.Size(m)
-}
-func (m *PrepareNetworkInjectResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_PrepareNetworkInjectResp.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_PrepareNetworkInjectResp proto.InternalMessageInfo
-
-func (m *PrepareNetworkInjectResp) GetCommonResp() *CommonResp {
-	if m != nil {
-		return m.CommonResp
-	}
-	return nil
-}
-
-type RevokeNetworkInjectReq struct {
-	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *RevokeNetworkInjectReq) Reset()         { *m = RevokeNetworkInjectReq{} }
-func (m *RevokeNetworkInjectReq) String() string { return proto.CompactTextString(m) }
-func (*RevokeNetworkInjectReq) ProtoMessage()    {}
-func (*RevokeNetworkInjectReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_56ede974c0020f77, []int{6}
-}
-
-func (m *RevokeNetworkInjectReq) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RevokeNetworkInjectReq.Unmarshal(m, b)
-}
-func (m *RevokeNetworkInjectReq) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RevokeNetworkInjectReq.Marshal(b, m, deterministic)
-}
-func (m *RevokeNetworkInjectReq) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RevokeNetworkInjectReq.Merge(m, src)
-}
-func (m *RevokeNetworkInjectReq) XXX_Size() int {
-	return xxx_messageInfo_RevokeNetworkInjectReq.Size(m)
-}
-func (m *RevokeNetworkInjectReq) XXX_DiscardUnknown() {
-	xxx_messageInfo_RevokeNetworkInjectReq.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RevokeNetworkInjectReq proto.InternalMessageInfo
-
-func (m *RevokeNetworkInjectReq) GetId() string {
-	if m != nil {
-		return m.Id
-	}
-	return ""
-}
-
-type RevokeNetworkInjectResp struct {
-	CommonResp           *CommonResp `protobuf:"bytes,1,opt,name=commonResp,proto3" json:"commonResp,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}    `json:"-"`
-	XXX_unrecognized     []byte      `json:"-"`
-	XXX_sizecache        int32       `json:"-"`
-}
-
-func (m *RevokeNetworkInjectResp) Reset()         { *m = RevokeNetworkInjectResp{} }
-func (m *RevokeNetworkInjectResp) String() string { return proto.CompactTextString(m) }
-func (*RevokeNetworkInjectResp) ProtoMessage()    {}
-func (*RevokeNetworkInjectResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_56ede974c0020f77, []int{7}
-}
-
-func (m *RevokeNetworkInjectResp) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_RevokeNetworkInjectResp.Unmarshal(m, b)
-}
-func (m *RevokeNetworkInjectResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_RevokeNetworkInjectResp.Marshal(b, m, deterministic)
-}
-func (m *RevokeNetworkInjectResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_RevokeNetworkInjectResp.Merge(m, src)
-}
-func (m *RevokeNetworkInjectResp) XXX_Size() int {
-	return xxx_messageInfo_RevokeNetworkInjectResp.Size(m)
-}
-func (m *RevokeNetworkInjectResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_RevokeNetworkInjectResp.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_RevokeNetworkInjectResp proto.InternalMessageInfo
-
-func (m *RevokeNetworkInjectResp) GetCommonResp() *CommonResp {
-	if m != nil {
-		return m.CommonResp
-	}
-	return nil
-}
-
 type NetworkOperateReq struct {
-	Id                   string           `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Separation           []*Separation    `protobuf:"bytes,2,rep,name=separation,proto3" json:"separation,omitempty"`
-	Operator             *NetworkOperator `protobuf:"bytes,3,opt,name=operator,proto3" json:"operator,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}         `json:"-"`
-	XXX_unrecognized     []byte           `json:"-"`
-	XXX_sizecache        int32            `json:"-"`
+	Id                   string              `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	NetworkOperateMark   *NetworkOperateMark `protobuf:"bytes,2,opt,name=networkOperateMark,proto3" json:"networkOperateMark,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}            `json:"-"`
+	XXX_unrecognized     []byte              `json:"-"`
+	XXX_sizecache        int32               `json:"-"`
 }
 
 func (m *NetworkOperateReq) Reset()         { *m = NetworkOperateReq{} }
 func (m *NetworkOperateReq) String() string { return proto.CompactTextString(m) }
 func (*NetworkOperateReq) ProtoMessage()    {}
 func (*NetworkOperateReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_56ede974c0020f77, []int{8}
+	return fileDescriptor_56ede974c0020f77, []int{4}
 }
 
 func (m *NetworkOperateReq) XXX_Unmarshal(b []byte) error {
@@ -385,16 +228,9 @@ func (m *NetworkOperateReq) GetId() string {
 	return ""
 }
 
-func (m *NetworkOperateReq) GetSeparation() []*Separation {
+func (m *NetworkOperateReq) GetNetworkOperateMark() *NetworkOperateMark {
 	if m != nil {
-		return m.Separation
-	}
-	return nil
-}
-
-func (m *NetworkOperateReq) GetOperator() *NetworkOperator {
-	if m != nil {
-		return m.Operator
+		return m.NetworkOperateMark
 	}
 	return nil
 }
@@ -411,7 +247,7 @@ func (m *NetworkOperateResp) Reset()         { *m = NetworkOperateResp{} }
 func (m *NetworkOperateResp) String() string { return proto.CompactTextString(m) }
 func (*NetworkOperateResp) ProtoMessage()    {}
 func (*NetworkOperateResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_56ede974c0020f77, []int{9}
+	return fileDescriptor_56ede974c0020f77, []int{5}
 }
 
 func (m *NetworkOperateResp) XXX_Unmarshal(b []byte) error {
@@ -458,7 +294,7 @@ func (m *RevokeNetworkOperateReq) Reset()         { *m = RevokeNetworkOperateReq
 func (m *RevokeNetworkOperateReq) String() string { return proto.CompactTextString(m) }
 func (*RevokeNetworkOperateReq) ProtoMessage()    {}
 func (*RevokeNetworkOperateReq) Descriptor() ([]byte, []int) {
-	return fileDescriptor_56ede974c0020f77, []int{10}
+	return fileDescriptor_56ede974c0020f77, []int{6}
 }
 
 func (m *RevokeNetworkOperateReq) XXX_Unmarshal(b []byte) error {
@@ -504,7 +340,7 @@ func (m *RevokeNetworkOperateResp) Reset()         { *m = RevokeNetworkOperateRe
 func (m *RevokeNetworkOperateResp) String() string { return proto.CompactTextString(m) }
 func (*RevokeNetworkOperateResp) ProtoMessage()    {}
 func (*RevokeNetworkOperateResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_56ede974c0020f77, []int{11}
+	return fileDescriptor_56ede974c0020f77, []int{7}
 }
 
 func (m *RevokeNetworkOperateResp) XXX_Unmarshal(b []byte) error {
@@ -532,109 +368,41 @@ func (m *RevokeNetworkOperateResp) GetCommonResp() *CommonResp {
 	return nil
 }
 
-type CommonResp struct {
-	Result               bool      `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
-	ErrorType            ErrorType `protobuf:"varint,2,opt,name=errorType,proto3,enum=pb.ErrorType" json:"errorType,omitempty"`
-	Id                   string    `protobuf:"bytes,3,opt,name=id,proto3" json:"id,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
-}
-
-func (m *CommonResp) Reset()         { *m = CommonResp{} }
-func (m *CommonResp) String() string { return proto.CompactTextString(m) }
-func (*CommonResp) ProtoMessage()    {}
-func (*CommonResp) Descriptor() ([]byte, []int) {
-	return fileDescriptor_56ede974c0020f77, []int{12}
-}
-
-func (m *CommonResp) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_CommonResp.Unmarshal(m, b)
-}
-func (m *CommonResp) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_CommonResp.Marshal(b, m, deterministic)
-}
-func (m *CommonResp) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_CommonResp.Merge(m, src)
-}
-func (m *CommonResp) XXX_Size() int {
-	return xxx_messageInfo_CommonResp.Size(m)
-}
-func (m *CommonResp) XXX_DiscardUnknown() {
-	xxx_messageInfo_CommonResp.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_CommonResp proto.InternalMessageInfo
-
-func (m *CommonResp) GetResult() bool {
-	if m != nil {
-		return m.Result
-	}
-	return false
-}
-
-func (m *CommonResp) GetErrorType() ErrorType {
-	if m != nil {
-		return m.ErrorType
-	}
-	return ErrorType_UnknownError
-}
-
-func (m *CommonResp) GetId() string {
-	if m != nil {
-		return m.Id
-	}
-	return ""
-}
-
 func init() {
 	proto.RegisterType((*PrepareReq)(nil), "pb.prepareReq")
 	proto.RegisterType((*PrepareResp)(nil), "pb.prepareResp")
 	proto.RegisterType((*RevokeReq)(nil), "pb.revokeReq")
 	proto.RegisterType((*RevokeResp)(nil), "pb.revokeResp")
-	proto.RegisterType((*PrepareNetworkInjectReq)(nil), "pb.prepareNetworkInjectReq")
-	proto.RegisterType((*PrepareNetworkInjectResp)(nil), "pb.prepareNetworkInjectResp")
-	proto.RegisterType((*RevokeNetworkInjectReq)(nil), "pb.revokeNetworkInjectReq")
-	proto.RegisterType((*RevokeNetworkInjectResp)(nil), "pb.revokeNetworkInjectResp")
 	proto.RegisterType((*NetworkOperateReq)(nil), "pb.networkOperateReq")
 	proto.RegisterType((*NetworkOperateResp)(nil), "pb.networkOperateResp")
 	proto.RegisterType((*RevokeNetworkOperateReq)(nil), "pb.revokeNetworkOperateReq")
 	proto.RegisterType((*RevokeNetworkOperateResp)(nil), "pb.revokeNetworkOperateResp")
-	proto.RegisterType((*CommonResp)(nil), "pb.commonResp")
 }
 
 func init() { proto.RegisterFile("agent.proto", fileDescriptor_56ede974c0020f77) }
 
 var fileDescriptor_56ede974c0020f77 = []byte{
-	// 437 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x54, 0xb1, 0x72, 0xda, 0x40,
-	0x10, 0x8d, 0xa4, 0x40, 0x60, 0x49, 0x94, 0xc9, 0x42, 0x40, 0x23, 0x28, 0x18, 0x55, 0x30, 0xc9,
-	0x28, 0x13, 0xd2, 0x86, 0x82, 0x22, 0x05, 0x14, 0xb1, 0xe7, 0xec, 0xc2, 0xad, 0x80, 0xb3, 0x07,
-	0x63, 0x74, 0xe7, 0x93, 0x6c, 0x8f, 0x7b, 0xff, 0x87, 0x7f, 0xd5, 0x73, 0x27, 0x09, 0x09, 0x38,
-	0xec, 0xb1, 0x3a, 0x6e, 0xf7, 0xed, 0x7b, 0xfb, 0x8e, 0x77, 0x82, 0x46, 0x70, 0x45, 0xc3, 0xd8,
-	0xe7, 0x82, 0xc5, 0x0c, 0x4d, 0x3e, 0x77, 0x3f, 0x2f, 0xd8, 0x66, 0xc3, 0xc2, 0xa4, 0xe2, 0xf5,
-	0x00, 0xb8, 0xa0, 0x3c, 0x10, 0x94, 0xd0, 0x5b, 0xb4, 0xc1, 0x5c, 0x2d, 0x1d, 0xa3, 0x6f, 0x0c,
-	0xea, 0xc4, 0x5c, 0x2d, 0xbd, 0x31, 0x34, 0xb6, 0xdd, 0x88, 0xa3, 0x0f, 0x90, 0x0c, 0xcb, 0x93,
-	0x82, 0x35, 0x46, 0xb6, 0xcf, 0xe7, 0x7e, 0x5e, 0x25, 0x05, 0x84, 0xf7, 0x1b, 0xea, 0x82, 0xde,
-	0xb3, 0xb5, 0x8e, 0x1b, 0x5b, 0x50, 0xb9, 0x64, 0x62, 0x41, 0x1d, 0xb3, 0x6f, 0x0c, 0x6a, 0x24,
-	0x39, 0x78, 0x7f, 0x01, 0xb2, 0x91, 0x12, 0x82, 0x43, 0xe8, 0xa4, 0xfb, 0xfe, 0xa7, 0xf1, 0x03,
-	0x13, 0xeb, 0x69, 0x78, 0x4d, 0x17, 0xb1, 0xce, 0xda, 0x0c, 0x1c, 0x3d, 0xb4, 0x84, 0xec, 0x00,
-	0xda, 0xc9, 0xd2, 0x6f, 0xaa, 0x4e, 0xa1, 0xa3, 0x45, 0x96, 0x10, 0x7d, 0x32, 0xe0, 0x5b, 0x98,
-	0xb0, 0x9c, 0x70, 0x2a, 0x82, 0x58, 0x7b, 0xcb, 0x3e, 0x40, 0x24, 0x5d, 0x06, 0xf1, 0x8a, 0x85,
-	0x8e, 0xd9, 0xb7, 0x32, 0xd6, 0xbc, 0x4a, 0x0a, 0x08, 0xfc, 0x05, 0x35, 0xa6, 0xd8, 0x98, 0x70,
-	0x2c, 0xb5, 0x43, 0x53, 0xa2, 0x77, 0x84, 0x98, 0x20, 0x5b, 0x90, 0x77, 0x01, 0xb8, 0xbf, 0xc5,
-	0xfb, 0xcd, 0x20, 0xc2, 0xc7, 0x4d, 0x20, 0xd6, 0x2a, 0x0b, 0x15, 0xa2, 0x7e, 0x7b, 0xe3, 0xbd,
-	0xbb, 0x7a, 0xc5, 0xa5, 0x6e, 0x7c, 0x06, 0x8e, 0x7e, 0xbc, 0xc4, 0x5d, 0x07, 0x45, 0x3c, 0xb6,
-	0xa1, 0x2a, 0x68, 0x74, 0x77, 0x13, 0xab, 0xc9, 0x1a, 0x49, 0x4f, 0xf8, 0x03, 0xea, 0x54, 0x08,
-	0x26, 0xce, 0x1f, 0x79, 0x92, 0x6a, 0x7b, 0xf4, 0x45, 0x92, 0xfe, 0xcb, 0x8a, 0x24, 0xef, 0xa7,
-	0x16, 0xac, 0xcc, 0xc2, 0xe8, 0xd9, 0x82, 0xca, 0x44, 0x3e, 0x55, 0xfc, 0x09, 0x9f, 0xd2, 0x64,
-	0xa2, 0xda, 0x29, 0x7f, 0x9f, 0xee, 0xd7, 0x9d, 0x73, 0xc4, 0xbd, 0x0f, 0x38, 0x94, 0xcb, 0x48,
-	0x9b, 0xa8, 0xb4, 0xb6, 0xef, 0xcd, 0xb5, 0x8b, 0x47, 0x05, 0x3d, 0x83, 0x96, 0x2e, 0xf2, 0xd8,
-	0x2d, 0xb0, 0xee, 0x27, 0xd8, 0xed, 0x1d, 0x6f, 0x2a, 0xd2, 0x53, 0x68, 0x6a, 0x12, 0x8d, 0x6e,
-	0xae, 0x7e, 0x40, 0xd9, 0x3d, 0xda, 0x53, 0x8c, 0x13, 0xb0, 0x77, 0x13, 0x85, 0xdf, 0x0f, 0x22,
-	0xa8, 0x1c, 0xb6, 0x75, 0xe5, 0xcc, 0xa9, 0xee, 0xbf, 0xc7, 0x43, 0xe5, 0x02, 0x5d, 0xef, 0x78,
-	0x53, 0x92, 0xce, 0xab, 0xea, 0x8b, 0xf9, 0xe7, 0x25, 0x00, 0x00, 0xff, 0xff, 0x9f, 0x18, 0xc9,
-	0xd1, 0x52, 0x05, 0x00, 0x00,
+	// 306 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x53, 0x4d, 0x4f, 0x83, 0x40,
+	0x10, 0x15, 0x22, 0xd5, 0x0e, 0x8a, 0x71, 0x52, 0x2b, 0xc1, 0x1e, 0x9a, 0x3d, 0xd5, 0xc4, 0x90,
+	0x88, 0x57, 0x7b, 0xe8, 0xc5, 0x83, 0x89, 0x9a, 0xac, 0x17, 0xaf, 0xd0, 0xae, 0xa6, 0x21, 0xb0,
+	0xeb, 0x96, 0xe8, 0x5f, 0xf7, 0x68, 0x76, 0xd7, 0x96, 0x22, 0x6b, 0x4c, 0xb9, 0x31, 0x1f, 0xef,
+	0xcd, 0x9b, 0xe1, 0x2d, 0xf8, 0xe9, 0x1b, 0x2b, 0xab, 0x58, 0x48, 0x5e, 0x71, 0x74, 0x45, 0x16,
+	0x1d, 0xcd, 0x79, 0x51, 0xf0, 0xd2, 0x64, 0xc8, 0x08, 0x40, 0x48, 0x26, 0x52, 0xc9, 0x28, 0x7b,
+	0xc7, 0x00, 0xdc, 0xe5, 0x22, 0x74, 0xc6, 0xce, 0xa4, 0x4f, 0xdd, 0xe5, 0x82, 0x4c, 0xc1, 0xdf,
+	0x54, 0x57, 0x02, 0x63, 0x00, 0x03, 0x56, 0x91, 0x6e, 0xf3, 0x93, 0x20, 0x16, 0x59, 0x5c, 0x67,
+	0xe9, 0x56, 0x07, 0xb9, 0x86, 0xbe, 0x64, 0x1f, 0x3c, 0xb7, 0x71, 0xe3, 0x00, 0xbc, 0x57, 0x2e,
+	0xe7, 0x2c, 0x74, 0xc7, 0xce, 0xe4, 0x90, 0x9a, 0x80, 0xdc, 0x02, 0xac, 0x21, 0x1d, 0x06, 0xe6,
+	0x70, 0x5a, 0xb2, 0xea, 0x93, 0xcb, 0xfc, 0x49, 0x30, 0x99, 0x56, 0xd6, 0xc1, 0x77, 0x80, 0xcd,
+	0xa6, 0x87, 0x54, 0xe6, 0x5a, 0x85, 0x9f, 0x0c, 0x15, 0x79, 0xbb, 0x4a, 0x2d, 0x08, 0xf2, 0xf2,
+	0x9b, 0xa7, 0x8b, 0x64, 0x44, 0xd8, 0x2f, 0xd6, 0xf3, 0x3d, 0xaa, 0xbf, 0xc9, 0x14, 0xce, 0xcd,
+	0x11, 0x1e, 0xff, 0x5d, 0xc6, 0x06, 0xbf, 0x87, 0xd0, 0x0e, 0xdf, 0x5d, 0x5e, 0xf2, 0xe5, 0x80,
+	0x37, 0x53, 0x0e, 0xc2, 0x2b, 0x38, 0xf8, 0xf1, 0x02, 0x6a, 0x40, 0x6d, 0x9b, 0xe8, 0xa4, 0x11,
+	0xaf, 0x04, 0xd9, 0xc3, 0x4b, 0xe8, 0x19, 0x0d, 0x78, 0xac, 0x8a, 0x1b, 0x1b, 0x44, 0xc1, 0x76,
+	0xa8, 0x5b, 0x67, 0x10, 0x34, 0xef, 0x88, 0x67, 0xed, 0xbf, 0xa0, 0xa0, 0x43, 0x5b, 0x5a, 0x53,
+	0x3c, 0xc3, 0xc0, 0xb6, 0x31, 0x5e, 0xd4, 0xc3, 0x5a, 0xa7, 0x8c, 0x46, 0x7f, 0x17, 0x15, 0x69,
+	0xd6, 0xd3, 0x2f, 0xe4, 0xe6, 0x3b, 0x00, 0x00, 0xff, 0xff, 0xf8, 0x76, 0xe1, 0x05, 0x42, 0x03,
+	0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -651,8 +419,6 @@ const _ = grpc.SupportPackageIsVersion4
 type AgentClient interface {
 	Prepare(ctx context.Context, in *PrepareReq, opts ...grpc.CallOption) (*PrepareResp, error)
 	Revoke(ctx context.Context, in *RevokeReq, opts ...grpc.CallOption) (*RevokeResp, error)
-	PrepareNetworkInject(ctx context.Context, in *PrepareNetworkInjectReq, opts ...grpc.CallOption) (*PrepareNetworkInjectResp, error)
-	RevokeNetworkInject(ctx context.Context, in *RevokeNetworkInjectReq, opts ...grpc.CallOption) (*RevokeNetworkInjectResp, error)
 	NetworkOperate(ctx context.Context, in *NetworkOperateReq, opts ...grpc.CallOption) (*NetworkOperateResp, error)
 	RevokeNetworkOperate(ctx context.Context, in *RevokeNetworkOperateReq, opts ...grpc.CallOption) (*RevokeNetworkOperateResp, error)
 }
@@ -683,24 +449,6 @@ func (c *agentClient) Revoke(ctx context.Context, in *RevokeReq, opts ...grpc.Ca
 	return out, nil
 }
 
-func (c *agentClient) PrepareNetworkInject(ctx context.Context, in *PrepareNetworkInjectReq, opts ...grpc.CallOption) (*PrepareNetworkInjectResp, error) {
-	out := new(PrepareNetworkInjectResp)
-	err := c.cc.Invoke(ctx, "/pb.Agent/prepareNetworkInject", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *agentClient) RevokeNetworkInject(ctx context.Context, in *RevokeNetworkInjectReq, opts ...grpc.CallOption) (*RevokeNetworkInjectResp, error) {
-	out := new(RevokeNetworkInjectResp)
-	err := c.cc.Invoke(ctx, "/pb.Agent/revokeNetworkInject", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *agentClient) NetworkOperate(ctx context.Context, in *NetworkOperateReq, opts ...grpc.CallOption) (*NetworkOperateResp, error) {
 	out := new(NetworkOperateResp)
 	err := c.cc.Invoke(ctx, "/pb.Agent/networkOperate", in, out, opts...)
@@ -723,8 +471,6 @@ func (c *agentClient) RevokeNetworkOperate(ctx context.Context, in *RevokeNetwor
 type AgentServer interface {
 	Prepare(context.Context, *PrepareReq) (*PrepareResp, error)
 	Revoke(context.Context, *RevokeReq) (*RevokeResp, error)
-	PrepareNetworkInject(context.Context, *PrepareNetworkInjectReq) (*PrepareNetworkInjectResp, error)
-	RevokeNetworkInject(context.Context, *RevokeNetworkInjectReq) (*RevokeNetworkInjectResp, error)
 	NetworkOperate(context.Context, *NetworkOperateReq) (*NetworkOperateResp, error)
 	RevokeNetworkOperate(context.Context, *RevokeNetworkOperateReq) (*RevokeNetworkOperateResp, error)
 }
@@ -738,12 +484,6 @@ func (*UnimplementedAgentServer) Prepare(ctx context.Context, req *PrepareReq) (
 }
 func (*UnimplementedAgentServer) Revoke(ctx context.Context, req *RevokeReq) (*RevokeResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Revoke not implemented")
-}
-func (*UnimplementedAgentServer) PrepareNetworkInject(ctx context.Context, req *PrepareNetworkInjectReq) (*PrepareNetworkInjectResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PrepareNetworkInject not implemented")
-}
-func (*UnimplementedAgentServer) RevokeNetworkInject(ctx context.Context, req *RevokeNetworkInjectReq) (*RevokeNetworkInjectResp, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RevokeNetworkInject not implemented")
 }
 func (*UnimplementedAgentServer) NetworkOperate(ctx context.Context, req *NetworkOperateReq) (*NetworkOperateResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NetworkOperate not implemented")
@@ -788,42 +528,6 @@ func _Agent_Revoke_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AgentServer).Revoke(ctx, req.(*RevokeReq))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Agent_PrepareNetworkInject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PrepareNetworkInjectReq)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AgentServer).PrepareNetworkInject(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/pb.Agent/PrepareNetworkInject",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AgentServer).PrepareNetworkInject(ctx, req.(*PrepareNetworkInjectReq))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Agent_RevokeNetworkInject_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RevokeNetworkInjectReq)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AgentServer).RevokeNetworkInject(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/pb.Agent/RevokeNetworkInject",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AgentServer).RevokeNetworkInject(ctx, req.(*RevokeNetworkInjectReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -875,14 +579,6 @@ var _Agent_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "revoke",
 			Handler:    _Agent_Revoke_Handler,
-		},
-		{
-			MethodName: "prepareNetworkInject",
-			Handler:    _Agent_PrepareNetworkInject_Handler,
-		},
-		{
-			MethodName: "revokeNetworkInject",
-			Handler:    _Agent_RevokeNetworkInject_Handler,
 		},
 		{
 			MethodName: "networkOperate",

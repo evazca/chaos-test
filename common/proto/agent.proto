@@ -4,11 +4,11 @@ package pb;
 
 import "common.proto";
 
+option java_package = "github.com.evazca";
+
 service Agent {
     rpc prepare (prepareReq) returns (prepareResp) {}
     rpc revoke (revokeReq) returns (revokeResp) {}
-    rpc prepareNetworkInject (prepareNetworkInjectReq) returns (prepareNetworkInjectResp) {}
-    rpc revokeNetworkInject (revokeNetworkInjectReq) returns (revokeNetworkInjectResp) {}
     rpc networkOperate(networkOperateReq) returns (networkOperateResp) {}
     rpc revokeNetworkOperate (revokeNetworkOperateReq) returns (revokeNetworkOperateResp) {}
 }
@@ -31,27 +31,9 @@ message revokeResp {
     commonResp commonResp = 1;
 }
 
-message prepareNetworkInjectReq {
-    string id = 1;
-}
-
-message prepareNetworkInjectResp {
-    commonResp commonResp = 1;
-}
-
-message revokeNetworkInjectReq {
-    string id = 1;
-
-}
-
-message revokeNetworkInjectResp {
-    commonResp commonResp = 1;
-}
-
 message networkOperateReq {
     string id = 1;
-    repeated separation separation = 2;
-    networkOperator operator = 3;
+    networkOperateMark networkOperateMark = 2;
 }
 
 message networkOperateResp {
@@ -69,8 +51,3 @@ message revokeNetworkOperateResp {
     commonResp commonResp = 1;
 }
 
-message commonResp {
-    bool result = 1;
-    ErrorType errorType = 2;
-    string id = 3;
-}

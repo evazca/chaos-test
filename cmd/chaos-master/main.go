@@ -1,15 +1,15 @@
-package chaos_agent
+package chaos_master
 
 import (
-	agent "github.com/evazca/chaos-test/chaos-agent"
+	master "github.com/evazca/chaos-test/chaos-master"
 	"github.com/evazca/chaos-test/common/log"
 	"os"
 )
 
 func main() {
 	log.Log()
-	addr := ":4399"
-	server := agent.NewServer(addr)
+	addr := ":4499"
+	server := master.NewServer(addr,"./conf.yaml")
 	err := server.Start()
 	if err != nil {
 		log.CommonLogger.Error(err)

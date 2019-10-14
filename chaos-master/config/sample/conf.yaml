@@ -1,0 +1,38 @@
+---
+test-cmd: java -jar test.jar
+server-instances:
+  - ip: "192.168.1.1"
+    ports: "8080,8081"
+    instance_name: "kafka-server"
+    start_cmd: "sh ./directory/bin/start"
+    data_path: "/directory/bin/kafka_data"
+
+  - ip: "192.168.1.2"
+    ports: "8080,8081"
+    instance_name: "kafka-server"
+    start_cmd: "sh ./directory/bin/start"
+    data_path: "/directory/bin/kafka_data"
+
+  - ip: "192.168.1.3"
+    ports: "8080,8081"
+    instance_name: "kafka-server"
+    start_cmd: "sh ./directory/bin/start"
+    data_path: "/directory/bin/kafka_data"
+
+  - ip: "192.168.1.4"
+    ports: "8080,8081"
+    instance_name: "zookeeper-server"
+    start_cmd: "sh ./directory/bin/start"
+    data_path: "/directory/bin/zookeeper_data"
+
+  - ip: "192.168.1.5"
+    ports: "8080,8081"
+    instance_name: "zookeeper-server"
+    start_cmd: "sh ./directory/bin/start"
+    data_path: "/directory/bin/zookeeper_data"
+
+  - ip: "192.168.1.6"
+    ports: "8080,8081"
+    instance_name: "zookeeper-server"
+    start_cmd: "sh ./directory/bin/start"
+    data_path: "/directory/bin/zookeeper_data"
