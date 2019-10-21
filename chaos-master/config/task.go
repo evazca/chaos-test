@@ -23,13 +23,13 @@ type ServerInstance struct {
 func (c *TaskConfig) DecodeFile(configPath string) error {
 	bs, err := ioutil.ReadFile(configPath)
 	if err != nil {
-		log.CommonLogger.Error("read file error "+ configPath, err )
+		log.CommonLogger().Error("read file error "+ configPath, err )
 		return err
 	}
 
 	err = yaml.UnmarshalStrict(bs, c)
 	if err != nil {
-		log.CommonLogger.Error("unmrshal file error "+ configPath, err )
+		log.CommonLogger().Error("unmrshal file error "+ configPath, err )
 		return err
 	}
 	return nil

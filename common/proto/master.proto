@@ -67,7 +67,7 @@ message networkOperateMasterResp {
 }
 
 message networkRevokeOperateMasterReq {
-    repeated int32 marks = 1;
+    repeated string ipMarks = 1;
 }
 
 message networkRevokeOperateMasterResp {

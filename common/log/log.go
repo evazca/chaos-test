@@ -4,9 +4,16 @@ import (
 	loggo "github.com/jeanphorn/log4go"
 )
 
-var CommonLogger  *loggo.Filter
+var commonLogger  *loggo.Filter
 
 func Log()  {
 	loggo.LoadConfiguration("./log.json")
-	CommonLogger = loggo.LOGGER("common")
+	commonLogger = loggo.LOGGER("common")
+}
+
+func CommonLogger() *loggo.Filter{
+	if CommonLogger == nil{
+		Log()
+	}
+	return commonLogger
 }
