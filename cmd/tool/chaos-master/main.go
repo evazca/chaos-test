@@ -50,12 +50,10 @@ func main() {
 func help()  {
 	var help = `
 	used for debug or special job like force revoke
-	sample: agent-cli addr rpc args
+	sample: master-cli addr rpc args
 	rpc:  pr => prepare, rv => revoke, ri => randomInject, ts => twoSplit, in => isolateNode, no => networkOperate, rno => revokeNetworkOperate
-	pr: agent-cli pr
-	rv: agent-cli rv
-	no: agent-cli no [networkOperateMark in json form]
-	rno: agent-cli rno [ip:mark string in json form]
+	no: no [networkOperateMark in json form]
+	rno: rno [ip:mark string in json form]
 	`
 	fmt.Println(help)
 }
