@@ -18,7 +18,6 @@ type NetMonkey struct {
 }
 
 //TODO check the cmd result more carefully
-
 func (n *NetMonkey) Prepare() (error) {
 	//TODO it is not safe to del without check if there are some config for reason
 	cmd := "sudo tc qdisc del dev eth0 root"

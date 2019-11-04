@@ -55,11 +55,17 @@ func (s *Server) Start() error {
 		return err
 	}
 	for _, server := range s.config.ServerInstances {
-		s.agentMap[server.IP], err = grpc2.NewAgentClient(server.IP + ":4399")
-		if err != nil {
-			return err
+		if !server.IgnoreNode {
+			s.agentMap[server.IP], err = grpc2.NewAgentClient(server.IP + ":4399")
+			if err != nil {
+				return err
+			}
+		}else {
+			//every grpc call to the ignore node will return success
+			s.agentMap[server.IP] = &MockAgent{}
 		}
 	}
+
 	s.svr = grpc.NewServer()
 	pb.RegisterMasterServer(s.svr, s)
 	s.inProcess = 1
@@ -273,10 +279,13 @@ func (s *Server) operateSplits(ctx context.Context, splits []*pb.NetworkOperateM
 			return nil, errors.New("operate split failed")
 		}
 		mark := resp.Mark
-		netWorkOperateMark := &pb.NetworkOperateMark{Mark: mark, Separation: operateMark.Separation, NetworkOperator: operateMark.NetworkOperator, Ip: ip}
-		//mark 不够 ip + mark
-		s.networkOperates.Store(ip + ":" + strconv.Itoa(int(mark)),netWorkOperateMark)
-		marks = append(marks, netWorkOperateMark)
+		//the mark mock client return is -1
+		if mark > 0 {
+			netWorkOperateMark := &pb.NetworkOperateMark{Mark: mark, Separation: operateMark.Separation, NetworkOperator: operateMark.NetworkOperator, Ip: ip}
+			//mark 不够 ip:mark
+			s.networkOperates.Store(ip + ":" + strconv.Itoa(int(mark)),netWorkOperateMark)
+			marks = append(marks, netWorkOperateMark)
+		}
 	}
 	return marks,nil
 }

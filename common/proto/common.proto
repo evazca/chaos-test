@@ -4,18 +4,18 @@ package pb;
 
 option java_package = "com.github.evazca.chaos.pb";
 
-message separation{
+message separation {
     string ip = 1;
     int32 port = 2;
     string flag = 3;
     string protocol = 4;
 }
 
-    message networkOperator {
-        networkOperate operate = 1;
-        int32 probability = 2;
-        int32 delay =3;
-    }
+message networkOperator {
+    networkOperate operate = 1;
+    int32 probability = 2;
+    int32 delay = 3;
+}
 
 message networkOperateMark {
     int32 mark = 1;

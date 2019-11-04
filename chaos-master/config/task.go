@@ -18,6 +18,8 @@ type ServerInstance struct {
 	InstanceName string   `yaml:"instance_name"`
 	StartCmd     string   `yaml:"start_cmd"`
 	DataPath     string   `yaml:"data_path"`
+	//the node we are not able to reach for some reason
+	IgnoreNode   bool     `yaml:"ignore"`
 }
 
 func (c *TaskConfig) DecodeFile(configPath string) error {

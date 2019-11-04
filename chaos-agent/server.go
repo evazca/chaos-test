@@ -46,7 +46,7 @@ func (s *Server) Prepare(ctx context.Context, in *pb.PrepareReq) (*pb.PrepareRes
 		return &pb.PrepareResp{CommonResp: &pb.CommonResp{Result:false,ErrorType: pb.ErrorType_InProcessError,Id: s.id}},nil
 	}
 	s.id = in.Id
-	err:= s.netMonkey.Prepare()
+	err := s.netMonkey.Prepare()
 	if err != nil {
 		log.CommonLogger().Error("prepare error",err)
 		return  &pb.PrepareResp{CommonResp: &pb.CommonResp{Result: false, ErrorType: pb.ErrorType_UnknownError,Id: s.id}}, nil
